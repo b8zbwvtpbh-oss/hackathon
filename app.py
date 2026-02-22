@@ -193,14 +193,4 @@ def download_report(analysis_id):
     return app.send_static_file(filename)
 
 if __name__ == "__main__":
-
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
-    import spacy
-import subprocess
-import sys
-
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    subprocess.check_call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
